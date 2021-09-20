@@ -1,8 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import BreedPage from '@/components/BreedPage'
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -17,12 +15,14 @@ const routes = [
     component: () => import("../views/Favorites.vue"),
   },
   {
-    path: '/:breed',
-    component: BreedPage
+    path: "/:breed",
+    name: "BreedPage",
+    component: () => import("../components/BreedPage.vue"),
   }
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 

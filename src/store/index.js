@@ -163,8 +163,7 @@ export const store = new Vuex.Store({
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.favourites));
       image.btn.setAttribute("disabled", true);
       image.btn.classList.add("disabled");
-      image.btn.innerText = "Added";
-      image.btn.style.backgroundColor = "darkgreen";
+      image.btn.innerText = "Добавлено";
     },
     GET_FAVOURITES(state) {
       state.favourites = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
